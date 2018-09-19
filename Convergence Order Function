@@ -1,0 +1,28 @@
+import math
+
+int h1 = 0 #first h value
+int h2 = 0 #second h value
+int e1 = 0 #first e value
+int power = 0 #power of O(h^power)
+
+def calc(h1, h2, e1, power):
+    ans = h1 ** power
+    ans2 = e1 / ans
+    ans3 = ans2 * (h2 ** power)
+    return ans3
+
+
+a = calc(0.01, 0.002, 0.06, 4)
+print(a)
+
+int h1_2 = 0 #first h value
+int h2_2 = 0 #second h value
+int e1_2 = 0 #first error value
+int e2_2 = 0 #second error value
+
+def differentCalc(h1_2, h2_2, e1_2, e2_2):
+    return math.log(e1_2 / e2_2) / math.log(h1_2 / h2_2)
+
+
+b = round(differentCalc(0.4, 0.7, 0.01, 0.1))
+print(b)
